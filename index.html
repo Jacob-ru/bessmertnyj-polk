@@ -1,0 +1,19 @@
+---
+layout: default
+title: Ветераны
+---
+<h1>Ветераны</h1>
+
+<ul>
+    {% for veteran in site.veterans %}
+    <div>
+        <div style="max-width:100px; display: inline-block">
+            <img style="max-width: 90px" src="{{ site.baseurl }}/assets/photos/{{ veteran.photo }}" alt="">
+        </div>
+        <div style="display: inline-block">
+            <h2><a href="{{ veteran.url | prepend:site.baseurl }}">{{ veteran.name }}</a></h2>
+            <h3>{{ veteran.position }} {{ veteran.living_date }}</h3>
+        </div>
+    </div>
+    {% endfor %}
+</ul>
